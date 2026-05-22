@@ -1,0 +1,260 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#efefef;
+}
+
+header{
+    background:#4b4b4b;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    width:180px;
+    height:80px;
+    background:white;
+    border-radius:10px;
+    background-image:url("images/bus.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffd700;
+}
+
+.hero{
+    background:#555;
+    color:white;
+    padding:50px;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    flex-wrap:wrap;
+}
+
+.hero-image{
+    width:400px;
+    height:220px;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-text h1{
+    margin-bottom:20px;
+    font-size:40px;
+}
+
+.btn{
+    background:black;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    cursor:pointer;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ffd700;
+    color:black;
+    transform:scale(1.05);
+}
+
+.section-title{
+    text-align:center;
+    margin:50px 0 30px;
+    font-size:36px;
+}
+
+.routes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding:0 50px;
+}
+
+.card{
+    background:#555;
+    color:white;
+    text-align:center;
+    padding-bottom:20px;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card-image{
+    height:220px;
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.card h3{
+    margin-top:15px;
+}
+
+.card p{
+    margin:10px 0;
+}
+
+.booking-section{
+    background:#4b4b4b;
+    margin:60px 50px;
+    padding:50px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    border-radius:15px;
+}
+
+.booking-section select,
+.booking-section input{
+    padding:12px;
+    width:220px;
+    border:none;
+    border-radius:8px;
+}
+
+.why-us{
+    padding:60px;
+    text-align:center;
+}
+
+.features{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.feature-box{
+    width:250px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    transition:0.3s;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-box:hover{
+    transform:scale(1.08);
+    background:#ffd700;
+}
+
+.contact-form{
+    width:500px;
+    margin:50px auto;
+    background:#555;
+    padding:40px;
+    color:white;
+    border-radius:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+}
+
+footer{
+    background:#4b4b4b;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    padding:40px 50px;
+    margin-top:50px;
+    flex-wrap:wrap;
+}
+
+.seat-container{
+    display:grid;
+    grid-template-columns:repeat(2,100px);
+    gap:20px;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.seat{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.seat:hover{
+    background:#ffd700;
+    transform:scale(1.1);
+}
+
+.seat.selected{
+    background:green;
+    color:white;
+}
+
+.summary-box{
+    background:white;
+    padding:30px;
+    width:350px;
+    margin:40px auto;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .hero{
+        flex-direction:column;
+        gap:30px;
+    }
+
+}

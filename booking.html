@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html">
+        <div class="logo"></div>
+    </a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="routes.html">Routes</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<h1 class="section-title">Book Your Journey</h1>
+
+<section class="booking-section">
+
+    <select>
+        <option>Select Route</option>
+        <option>South Africa</option>
+        <option>Zimbabwe</option>
+        <option>Namibia</option>
+    </select>
+
+    <input type="date">
+
+    <select>
+        <option>Trip Type</option>
+        <option>One Way</option>
+        <option>Return</option>
+    </select>
+
+</section>
+
+<section class="why-us">
+
+    <h2>Select Your Seat</h2>
+
+    <div class="seat-container">
+
+        <div class="seat">1</div>
+        <div class="seat">2</div>
+        <div class="seat">3</div>
+        <div class="seat">4</div>
+        <div class="seat">5</div>
+        <div class="seat">6</div>
+
+    </div>
+
+    <div class="summary-box">
+
+        <h3>BOOKING SUMMARY</h3>
+
+        <br>
+
+        <p><strong>Route:</strong> Gaborone to South Africa</p>
+
+        <p><strong>Date:</strong> 12 May 2026</p>
+
+        <p><strong>Trip Type:</strong> One Way</p>
+
+        <p><strong>Price:</strong> P600</p>
+
+    </div>
+
+    <a href="contact.html">
+        <button class="btn">Confirm Booking</button>
+    </a>
+
+</section>
+
+<footer>
+
+    <div>
+        <h3>ABOUT US</h3>
+        <p>We provide safe and reliable bus services across Southern Africa</p>
+    </div>
+
+    <div>
+        <h3>CONTACT US</h3>
+        <p>+26771234578</p>
+        <p>info@buses.co.bw</p>
+    </div>
+
+</footer>
+
+<script>
+
+const seats = document.querySelectorAll(".seat");
+
+seats.forEach(seat => {
+
+    seat.addEventListener("click", () => {
+
+        seats.forEach(s => s.classList.remove("selected"));
+
+        seat.classList.add("selected");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
