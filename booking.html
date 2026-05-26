@@ -26,17 +26,31 @@
 
 <section class="booking-section">
 
-    <select>
-        <option>Select Route</option>
-        <option>South Africa</option>
-        <option>Zimbabwe</option>
-        <option>Namibia</option>
+    <select id="routeSelect">
+
+        <option value="">Select Route</option>
+
+        <option value="South Africa" data-price="600">
+            Gaborone to South Africa
+        </option>
+
+        <option value="Zimbabwe" data-price="800">
+            Gaborone to Zimbabwe
+        </option>
+
+        <option value="Namibia" data-price="780">
+            Gaborone to Namibia
+        </option>
+
+        <option value="Lesotho" data-price="700">
+            Gaborone to Lesotho
+        </option>
+
     </select>
 
-    <input type="date">
+    <input type="date" id="travelDate">
 
-    <select>
-        <option>Trip Type</option>
+    <select id="tripType">
         <option>One Way</option>
         <option>Return</option>
     </select>
@@ -64,13 +78,25 @@
 
         <br>
 
-        <p><strong>Route:</strong> Gaborone to South Africa</p>
+        <p><strong>Route:</strong>
+            <span id="summaryRoute">None Selected</span>
+        </p>
 
-        <p><strong>Date:</strong> 12 May 2026</p>
+        <p><strong>Date:</strong>
+            <span id="summaryDate">Not Selected</span>
+        </p>
 
-        <p><strong>Trip Type:</strong> One Way</p>
+        <p><strong>Trip Type:</strong>
+            <span id="summaryTrip">One Way</span>
+        </p>
 
-        <p><strong>Price:</strong> P600</p>
+        <p><strong>Seat:</strong>
+            <span id="summarySeat">None</span>
+        </p>
+
+        <p><strong>Price:</strong>
+            P<span id="summaryPrice">0</span>
+        </p>
 
     </div>
 
@@ -98,6 +124,42 @@
 <script>
 
 const seats = document.querySelectorAll(".seat");
+const routeSelect = document.getElementById("routeSelect");
+const travelDate = document.getElementById("travelDate");
+const tripType = document.getElementById("tripType");
+
+const summaryRoute = document.getElementById("summaryRoute");
+const summaryDate = document.getElementById("summaryDate");
+const summaryTrip = document.getElementById("summaryTrip");
+const summarySeat = document.getElementById("summarySeat");
+const summaryPrice = document.getElementById("summaryPrice");
+
+routeSelect.addEventListener("change", () => {
+
+    const selectedOption =
+    routeSelect.options[routeSelect.selectedIndex];
+
+    summaryRoute.textContent =
+    selectedOption.textContent;
+
+    summaryPrice.textContent =
+    selectedOption.dataset.price;
+
+});
+
+travelDate.addEventListener("change", () => {
+
+    summaryDate.textContent =
+    travelDate.value;
+
+});
+
+tripType.addEventListener("change", () => {
+
+    summaryTrip.textContent =
+    tripType.value;
+
+});
 
 seats.forEach(seat => {
 
@@ -106,6 +168,8 @@ seats.forEach(seat => {
         seats.forEach(s => s.classList.remove("selected"));
 
         seat.classList.add("selected");
+
+        summarySeat.textContent = seat.textContent;
 
     });
 

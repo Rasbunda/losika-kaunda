@@ -21,12 +21,12 @@ header{
 }
 
 .logo{
-    width:180px;
-    height:80px;
-    background:white;
+    width:220px;
+    height:90px;
     border-radius:10px;
-    background-image:url("images/bus.jpg");
-    background-size:cover;
+    background-image:url("bus-logo-template-modern-travel-vector-54796901.avif");
+    background-size:contain;
+    background-repeat:no-repeat;
     background-position:center;
 }
 
